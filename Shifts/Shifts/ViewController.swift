@@ -12,20 +12,26 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var tableView: UITableView!
     
     var shifts = [ShiftElement]()
-    
     let cellId = "cellId"
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableViewStuff()
+        getShifts()
+    }
+
+    fileprivate func tableViewStuff() {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
-        
-        shifts = API.shared.getShifts().shifts
-        
     }
 
+    fileprivate func getShifts() {
+        shifts = API.shared.getShifts().shifts
+    }
+
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return shifts.count
     }
@@ -36,6 +42,5 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         return cell
     }
-
 }
 
