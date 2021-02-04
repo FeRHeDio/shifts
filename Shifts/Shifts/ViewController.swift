@@ -10,11 +10,10 @@ import UIKit
 class ViewController: UITableViewController {
     
     @IBOutlet weak var addShiftButton: UIBarButtonItem!
-    
     @IBAction func addShiftButtonTapped(_ sender: Any) {
-        
         newShift()
     }
+    
     var shifts = [ShiftElement]()
     let cellId = "cellId"
     
@@ -26,6 +25,9 @@ class ViewController: UITableViewController {
         addShiftButton.tintColor = .black
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
     
     fileprivate func newShift() {
         print("some")

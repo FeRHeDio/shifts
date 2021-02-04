@@ -134,6 +134,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4HS-C4-wcU">
                                         <rect key="frame" x="321" y="0.0" width="34" height="36"/>
                                         <state key="normal" title="Save"/>
+                                        <connections>
+                                            <action selector="saveButtonTapped:" destination="pPN-Sa-AV9" eventType="touchUpInside" id="kNi-50-KxD"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -252,6 +255,7 @@
                         <outlet property="employeePicker" destination="sIx-hd-LGi" id="Sl6-tf-qvE"/>
                         <outlet property="endDatePicker" destination="llP-Ag-rVD" id="meO-nu-5Fx"/>
                         <outlet property="rolePicker" destination="IuM-J6-6an" id="Xpj-yw-X2T"/>
+                        <outlet property="saveButton" destination="4HS-C4-wcU" id="mLf-q6-hQm"/>
                         <outlet property="startDatePicker" destination="1Ij-cc-SiS" id="HCa-N1-0JZ"/>
                     </connections>
                 </viewController>

@@ -28,3 +28,4 @@ enum Color: String, Codable {
     case green = "green"
     case red = "red"
 }
+

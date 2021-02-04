@@ -14,18 +14,37 @@ class AddShiftViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     @IBOutlet weak var employeePicker: UIPickerView!
     @IBOutlet weak var rolePicker: UIPickerView!
     @IBOutlet weak var colorPicker: UIPickerView!
+    @IBOutlet weak var saveButton: UIButton!
+    @IBAction func saveButtonTapped(_ sender: Any) {
+        handleSaveButton()
+    }
+    @IBAction func dismissButtonTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     let employees = ["Anna", "Eugene", "Keyvan", "Anton"]
     let colors = ["Red", "Blue", "Green"]
     let roles = ["Waiter", "Prep", "Front of the house", "Cook"]
     
-    @IBAction func dismissButtonTapped(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
+    var selectedEmployee: String?
+    var selectedRole: String?
+    var selectedColor: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        pickerViewStuff()
+    }
+    
+    func handleSaveButton() {
+        let newShift = ShiftElement(role: "some", name: "some", startDate: "some", endDate: "some", color: Color(rawValue: "some") ?? .blue)
+        
+        let shiftsVC = ViewController()
+        shiftsVC.shifts.append(newShift)
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    fileprivate func pickerViewStuff() {
         employeePicker.dataSource = self
         employeePicker.delegate = self
         rolePicker.dataSource = self
@@ -74,5 +93,19 @@ class AddShiftViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         pickerTitle.minimumScaleFactor = 0.5
         
         return pickerTitle
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        switch pickerView {
+        case employeePicker:
+            selectedEmployee = employees[row]
+        case rolePicker:
+            selectedRole = roles[row]
+        case colorPicker:
+            selectedColor = colors[row]
+        default:
+            break
+        }
     }
 }
