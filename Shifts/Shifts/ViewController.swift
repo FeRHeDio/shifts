@@ -38,9 +38,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
-        cell.textLabel?.text = shifts[indexPath.row].name
+        let shift = shifts[indexPath.row]
+        cell.textLabel?.text = shift.name
+        cell.backgroundColor = UIColor().named("\(shift.color)")
         
         return cell
     }
 }
+
+
 
