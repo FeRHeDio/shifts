@@ -24,6 +24,6 @@ class ShiftTableViewCell: UITableViewCell {
     fileprivate func setShift() {
         nameLabel.text = shift.name
         roleLabel.text = "(\(shift.role))"
-        colorView.backgroundColor = UIColor(named: "\(shift.color.rawValue)") //Does not change the color -> why?
+        colorView.backgroundColor = UIColor().named("\(shift.color)")
     }
 }
