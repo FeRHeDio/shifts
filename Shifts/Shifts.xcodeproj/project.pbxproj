@@ -13,6 +13,9 @@
 		7607B5D225CC25B10056F3DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7607B5D025CC25B10056F3DB /* Main.storyboard */; };
 		7607B5D425CC25B10056F3DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7607B5D325CC25B10056F3DB /* Assets.xcassets */; };
 		7607B5D725CC25B10056F3DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7607B5D525CC25B10056F3DB /* LaunchScreen.storyboard */; };
+		7607B5E125CC26E20056F3DB /* Shift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7607B5E025CC26E20056F3DB /* Shift.swift */; };
+		7607B5E625CC28FF0056F3DB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7607B5E525CC28FF0056F3DB /* API.swift */; };
+		7607B62725CC2E050056F3DB /* shifts.json in Resources */ = {isa = PBXBuildFile; fileRef = 7607B5DF25CC269E0056F3DB /* shifts.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +28,8 @@
 		7607B5D625CC25B10056F3DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7607B5D825CC25B10056F3DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7607B5DF25CC269E0056F3DB /* shifts.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = shifts.json; sourceTree = "<group>"; };
+		7607B5E025CC26E20056F3DB /* Shift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shift.swift; sourceTree = "<group>"; };
+		7607B5E525CC28FF0056F3DB /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,11 +62,13 @@
 		7607B5C925CC25B10056F3DB /* Shifts */ = {
 			isa = PBXGroup;
 			children = (
+				7607B5D025CC25B10056F3DB /* Main.storyboard */,
 				7607B5CA25CC25B10056F3DB /* AppDelegate.swift */,
 				7607B5CC25CC25B10056F3DB /* SceneDelegate.swift */,
 				7607B5CE25CC25B10056F3DB /* ViewController.swift */,
 				7607B5DF25CC269E0056F3DB /* shifts.json */,
-				7607B5D025CC25B10056F3DB /* Main.storyboard */,
+				7607B5E025CC26E20056F3DB /* Shift.swift */,
+				7607B5E525CC28FF0056F3DB /* API.swift */,
 				7607B5D325CC25B10056F3DB /* Assets.xcassets */,
 				7607B5D525CC25B10056F3DB /* LaunchScreen.storyboard */,
 				7607B5D825CC25B10056F3DB /* Info.plist */,
@@ -126,6 +133,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7607B62725CC2E050056F3DB /* shifts.json in Resources */,
 				7607B5D725CC25B10056F3DB /* LaunchScreen.storyboard in Resources */,
 				7607B5D425CC25B10056F3DB /* Assets.xcassets in Resources */,
 				7607B5D225CC25B10056F3DB /* Main.storyboard in Resources */,
@@ -139,9 +147,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7607B5E125CC26E20056F3DB /* Shift.swift in Sources */,
 				7607B5CF25CC25B10056F3DB /* ViewController.swift in Sources */,
 				7607B5CB25CC25B10056F3DB /* AppDelegate.swift in Sources */,
 				7607B5CD25CC25B10056F3DB /* SceneDelegate.swift in Sources */,
+				7607B5E625CC28FF0056F3DB /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
