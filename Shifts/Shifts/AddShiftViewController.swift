@@ -52,7 +52,6 @@ class AddShiftViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        
         var pickerTitle = UILabel()
         
         if let view = view {
