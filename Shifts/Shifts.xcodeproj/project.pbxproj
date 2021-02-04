@@ -17,6 +17,7 @@
 		7607B5E625CC28FF0056F3DB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7607B5E525CC28FF0056F3DB /* API.swift */; };
 		7607B62725CC2E050056F3DB /* shifts.json in Resources */ = {isa = PBXBuildFile; fileRef = 7607B5DF25CC269E0056F3DB /* shifts.json */; };
 		76D34A8625CC6D790075B363 /* UIColor+Named.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D34A8525CC6D790075B363 /* UIColor+Named.swift */; };
+		76D34A8925CC6E3C0075B363 /* ShiftTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D34A8825CC6E3C0075B363 /* ShiftTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		7607B5E025CC26E20056F3DB /* Shift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shift.swift; sourceTree = "<group>"; };
 		7607B5E525CC28FF0056F3DB /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		76D34A8525CC6D790075B363 /* UIColor+Named.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Named.swift"; sourceTree = "<group>"; };
+		76D34A8825CC6E3C0075B363 /* ShiftTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				7607B5CA25CC25B10056F3DB /* AppDelegate.swift */,
 				7607B5CC25CC25B10056F3DB /* SceneDelegate.swift */,
 				7607B5CE25CC25B10056F3DB /* ViewController.swift */,
+				76D34A8825CC6E3C0075B363 /* ShiftTableViewCell.swift */,
 				76D34A8525CC6D790075B363 /* UIColor+Named.swift */,
 				7607B5DF25CC269E0056F3DB /* shifts.json */,
 				7607B5E025CC26E20056F3DB /* Shift.swift */,
@@ -156,6 +159,7 @@
 				7607B5CB25CC25B10056F3DB /* AppDelegate.swift in Sources */,
 				7607B5CD25CC25B10056F3DB /* SceneDelegate.swift in Sources */,
 				7607B5E625CC28FF0056F3DB /* API.swift in Sources */,
+				76D34A8925CC6E3C0075B363 /* ShiftTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

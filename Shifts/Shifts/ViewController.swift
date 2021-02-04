@@ -7,9 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
-    @IBOutlet weak var tableView: UITableView!
+class ViewController: UITableViewController {
     
     var shifts = [ShiftElement]()
     let cellId = "cellId"
@@ -17,30 +15,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableViewStuff()
         getShifts()
-    }
-
-    fileprivate func tableViewStuff() {
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
     }
 
     fileprivate func getShifts() {
         shifts = API.shared.getShifts().shifts
     }
 
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return shifts.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
-        let shift = shifts[indexPath.row]
-        cell.textLabel?.text = shift.name
-        cell.backgroundColor = UIColor().named("\(shift.color)")
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! ShiftTableViewCell
+        
+        cell.shift = shifts[indexPath.item]
         
         return cell
     }
