@@ -26,6 +26,8 @@ class AddShiftViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         self.dismiss(animated: true, completion: nil)
     }
     
+    weak var delegate: Shiftable?
+    
     let employees = ["Anna", "Eugene", "Keyvan", "Anton"]
     let colors = ["Red", "Blue", "Green"]
     let roles = ["Waiter", "Prep", "Front of the house", "Cook"]
@@ -33,9 +35,6 @@ class AddShiftViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     var selectedEmployee: String?
     var selectedRole: String?
     var selectedColor: String?
-    weak var delegate: Shiftable?
-    
-    let newShift = ShiftElement(role: "some", name: "some", startDate: "some", endDate: "some", color: Color(rawValue: "some") ?? .blue)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +43,14 @@ class AddShiftViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     
     func handleSaveButton() {
+        let newShift = ShiftElement(
+            role: (selectedRole ?? roles.first)!,
+            name: (selectedEmployee ?? employees.first)!,
+            startDate: "some",
+            endDate: "some",
+            color: Color(rawValue: ((selectedColor ?? colors.first)?.lowercased())!)!
+        )
+
         delegate?.addNewShift(shift: newShift)
         self.dismiss(animated: true, completion: nil)
     }
@@ -100,7 +107,6 @@ class AddShiftViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
         switch pickerView {
         case employeePicker:
             selectedEmployee = employees[row]

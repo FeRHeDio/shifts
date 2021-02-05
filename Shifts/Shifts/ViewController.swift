@@ -45,7 +45,6 @@ class ViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! ShiftTableViewCell
         
         cell.shift = shifts[indexPath.item]
-        
         return cell
     }
 }

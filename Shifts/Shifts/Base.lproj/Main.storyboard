@@ -25,22 +25,22 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="kEH-RA-fC0">
-                                            <rect key="frame" x="28" y="26" width="123.5" height="17"/>
+                                            <rect key="frame" x="28" y="25.5" width="127" height="18"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3h-oH-J3D">
-                                                    <rect key="frame" x="0.0" y="0.0" width="35.5" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="39" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="role" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTe-P6-nef">
-                                                    <rect key="frame" x="55.5" y="0.0" width="24.5" height="17"/>
+                                                    <rect key="frame" x="59" y="0.0" width="24.5" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GU4-Q5-xpx">
-                                                    <rect key="frame" x="100" y="0.0" width="23.5" height="17"/>
+                                                    <rect key="frame" x="103.5" y="0.0" width="23.5" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -89,11 +89,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Coffe Co Shifts" id="Rg4-5y-hIV">
-                        <barButtonItem key="leftBarButtonItem" title="reload" id="OLF-GF-5Ab">
-                            <connections>
-                                <action selector="reloadButtonTapped:" destination="weS-LY-KnS" id="mvb-yA-Xju"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="new shift" id="VHM-FM-5G5">
                             <connections>
                                 <segue destination="pPN-Sa-AV9" kind="presentation" identifier="showAddShiftViewController" id="CCa-e6-San"/>
@@ -121,7 +116,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="owH-6i-szG">
                                         <rect key="frame" x="0.0" y="0.0" width="30" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
                                         <state key="normal" title="X">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
