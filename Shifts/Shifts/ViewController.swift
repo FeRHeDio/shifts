@@ -8,20 +8,20 @@
 import UIKit
 
 class ViewController: UITableViewController {
-    @IBAction func reloadButtonTapped(_ sender: Any) {
-        tableView.reloadData()
-    }
-    
     @IBOutlet weak var addShiftButton: UIBarButtonItem!
     
     var shifts = [ShiftElement]()
-    let cellId = "cellId"
     var newShift: ShiftElement?
+    let cellId = "cellId"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         getShifts()
+        addShiftButtonStyle()
+    }
+    
+    fileprivate func addShiftButtonStyle() {
         addShiftButton.title = "New Shift"
         addShiftButton.tintColor = .black
     }
@@ -46,6 +46,10 @@ class ViewController: UITableViewController {
         
         cell.shift = shifts[indexPath.item]
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
