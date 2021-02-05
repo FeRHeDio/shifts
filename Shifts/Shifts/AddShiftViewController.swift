@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol Shiftable: AnyObject {
+    func addNewShift(shift: ShiftElement)
+}
+
 class AddShiftViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
  
     @IBOutlet weak var startDatePicker: UIDatePicker!
@@ -29,6 +33,9 @@ class AddShiftViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     var selectedEmployee: String?
     var selectedRole: String?
     var selectedColor: String?
+    weak var delegate: Shiftable?
+    
+    let newShift = ShiftElement(role: "some", name: "some", startDate: "some", endDate: "some", color: Color(rawValue: "some") ?? .blue)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,13 +44,10 @@ class AddShiftViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     
     func handleSaveButton() {
-        let newShift = ShiftElement(role: "some", name: "some", startDate: "some", endDate: "some", color: Color(rawValue: "some") ?? .blue)
-        
-        let shiftsVC = ViewController()
-        shiftsVC.shifts.append(newShift)
+        delegate?.addNewShift(shift: newShift)
         self.dismiss(animated: true, completion: nil)
     }
-    
+  
     fileprivate func pickerViewStuff() {
         employeePicker.dataSource = self
         employeePicker.delegate = self

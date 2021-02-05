@@ -89,10 +89,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Coffe Co Shifts" id="Rg4-5y-hIV">
+                        <barButtonItem key="leftBarButtonItem" title="reload" id="OLF-GF-5Ab">
+                            <connections>
+                                <action selector="reloadButtonTapped:" destination="weS-LY-KnS" id="mvb-yA-Xju"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="new shift" id="VHM-FM-5G5">
                             <connections>
-                                <action selector="addShiftButtonTapped:" destination="weS-LY-KnS" id="1Ko-Rh-Uuv"/>
-                                <segue destination="pPN-Sa-AV9" kind="presentation" id="3sv-tB-QeT"/>
+                                <segue destination="pPN-Sa-AV9" kind="presentation" identifier="showAddShiftViewController" id="CCa-e6-San"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -107,7 +111,7 @@
         <!--Add Shift View Controller-->
         <scene sceneID="36W-fR-Kgo">
             <objects>
-                <viewController id="pPN-Sa-AV9" customClass="AddShiftViewController" customModule="Shifts" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddShiftViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pPN-Sa-AV9" customClass="AddShiftViewController" customModule="Shifts" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6xe-9X-TTa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -8,14 +8,15 @@
 import UIKit
 
 class ViewController: UITableViewController {
+    @IBAction func reloadButtonTapped(_ sender: Any) {
+        tableView.reloadData()
+    }
     
     @IBOutlet weak var addShiftButton: UIBarButtonItem!
-    @IBAction func addShiftButtonTapped(_ sender: Any) {
-        newShift()
-    }
     
     var shifts = [ShiftElement]()
     let cellId = "cellId"
+    var newShift: ShiftElement?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,14 +26,13 @@ class ViewController: UITableViewController {
         addShiftButton.tintColor = .black
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        tableView.reloadData()
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showAddShiftViewController" {
+            let addShiftVC: AddShiftViewController = segue.destination as! AddShiftViewController
+            addShiftVC.delegate = self
+        }
     }
     
-    fileprivate func newShift() {
-        print("some")
-    }
-
     fileprivate func getShifts() {
         shifts = API.shared.getShifts().shifts
     }
@@ -50,5 +50,13 @@ class ViewController: UITableViewController {
     }
 }
 
+extension ViewController: Shiftable {
+    func addNewShift(shift: ShiftElement) {
+        shifts.append(shift)
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+}
 
 
